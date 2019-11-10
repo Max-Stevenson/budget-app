@@ -4,4 +4,21 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import 'normalize.css/normalize.css';
 import '../styles/styles.scss';
 
-ReactDOM.render(<p>This is a Budget App</p>, document.getElementById('app'));
+const ExpenseDashboardPage = () => (
+    <div>Dashboard page</div>
+);
+
+const AddExpensePage = () => (
+    <div>Expense page</div>
+);
+
+const routes = (
+    <BrowserRouter>
+        <div>
+        <Route path="/" component={ExpenseDashboardPage} exact={true}/>
+        <Route path="/create" component={AddExpensePage}/>
+        </div>
+    </BrowserRouter>
+);
+
+ReactDOM.render(routes, document.getElementById('app'));
