@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from '../components/Header';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
 
 const ExpenseDashboardPage = () => (
@@ -22,16 +23,6 @@ const NotFoundPage = () => (
 		404 - <Link to="/">Go Home</Link>
 	</div>
 );
-
-const Header = () => (
-	<header>
-		<h1>Expense App</h1>
-		<NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
-		<NavLink to="/create" activeClassName="is-active">Add Expense</NavLink>
-		<NavLink to="/edit" activeClassName="is-active">Edit Expense</NavLink>
-		<NavLink to="/help" activeClassName="is-active">Help Page</NavLink>
-	</header>
-)
 
 const AppRouter = () => (
   <BrowserRouter>
