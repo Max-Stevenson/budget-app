@@ -1,12 +1,22 @@
 import {createStore, bindActionCreators} from 'redux';
 
 const store = createStore((state = {count: 0}, action) => {
-  if (action.type === 'INCREMENT') {
-    return {
-      count: state.count + 1
-    };
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        count: state.count + 1
+      };
+    case 'DECREMENT':
+      return {
+        count: state.count - 1
+      };
+    case 'RESET':
+      return {
+        count: 0
+      }
+    default:
+      return state;
   };
-  return state;
 });
 
 store.dispatch({
@@ -15,5 +25,9 @@ store.dispatch({
 store.dispatch({
   type: 'INCREMENT'
 });
+store.dispatch({
+  type: 'DECREMENT'
+});
+
 
 console.log(store.getState());
