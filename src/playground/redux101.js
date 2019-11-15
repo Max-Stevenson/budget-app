@@ -1,13 +1,18 @@
 import {createStore, bindActionCreators} from 'redux';
 
-const incrementCount = (payload = {}) => ({
+const incrementCount = ({incrementBy = 1} = {}) => ({
   type: 'INCREMENT',
-  incrementBy: typeof payload.incrementBy === 'number' ? payload.incrementBy : 1
+  incrementBy
 });
 
-const decrementCount = (payload = {}) => ({
+const decrementCount = ({decrementBy = 1} = {}) => ({
   type: 'DECREMENT',
-  decrementBy: typeof payload.decrementBy === 'number' ? payload.decrementBy : 1
+  decrementBy
+});
+
+const setCount = ({count = 1} = {}) => ({
+  type: 'SET',
+  count
 });
 
 const store = createStore((state = {count: 0}, action) => {
@@ -39,8 +44,4 @@ store.subscribe(() => {
 
 store.dispatch(incrementCount({ incrementBy: 5 }));
 store.dispatch(decrementCount({ decrementBy: 2 }));
-
-store.dispatch({
-  type: 'SET',
-  count: 100
-});
+store.dispatch(setCount({count: 100}));
