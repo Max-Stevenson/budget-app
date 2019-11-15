@@ -1,15 +1,6 @@
 console.log('destructuring');
 
-const person = {
-  name: 'Max',
-  age: 28,
-  location: {
-    city: 'Windsor',
-    temp: 'cold'
-  }
-};
+const address = ['1299 S Juniper St', 'Philadelphia', 'Pennsylvania', '19147'];
+const [street, city, state, zip] = address;
 
-const {name, age, location} = person;
-const {city, temp} = person.location;
-
-console.log(city);
+console.log(street);
