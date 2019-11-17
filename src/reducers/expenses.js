@@ -8,14 +8,12 @@ export default (state = expensesReducerDefaultState, action) => {
         action.expense
       ];
     case 'REMOVE_EXPENSE':
-      return state.filter((element) => {
-        element.id != action.id
-      });
+      return state.filter(({id}) => id !== action.id);
     case 'EDIT_EXPENSE':
-      return state.map((element) => {
-        if (element.id === action.id) {
+      return state.map((expense) => {
+        if (expense.id === action.id) {
           return {
-            ...element,
+            ...expense,
             ...action.updates
           }
         };
