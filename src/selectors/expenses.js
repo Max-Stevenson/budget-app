@@ -1,8 +1,8 @@
-export default (expenses, {text, sortBy, startDate, endDate}) => {
-  return expenses.filter((element) => {
-    const startDateMatch = typeof startDate !== 'number' || element.createdAt >= startDate;
-    const endDateMatch = typeof endDate !== 'number' || element.createdAt <= endDate;
-    const textMatch = typeof text !== 'string'|| element.description.includes(text)
+export default (expenses, { text, sortBy, startDate, endDate }) => {
+  return expenses.filter((expense) => {
+    const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
+    const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
+    const textMatch = typeof text !== 'string'|| expense.description.includes(text)
 
     return startDateMatch && endDateMatch && textMatch;
   }).sort((a, b) => {
