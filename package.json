@@ -9,7 +9,7 @@
     "serve": "live-server public/",
     "build": "webpack --mode=development",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
