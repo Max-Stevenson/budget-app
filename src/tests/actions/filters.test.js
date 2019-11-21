@@ -8,3 +8,15 @@ test('Should generate set start date action object', () => {
     date: moment(0)
   });
 });
+
+test('Should generate set end date action object', () => {
+  const action = setEndDate(moment(0));
+  expect(action).toEqual({
+    type: 'SET_END_DATE',
+    date: moment(0)
+  });
+});
+
+test('Should generate sort by amount action object', () => {
+
+});
