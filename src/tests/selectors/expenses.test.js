@@ -17,7 +17,7 @@ const expenses = [{
   id: '3',
   description: 'test three',
   note: 'test',
-  amount: 2,
+  amount: 3,
   createdAt: moment(0).add(4, 'days').valueOf()
 }];
 
@@ -38,19 +38,40 @@ test('Should filter by startDate', () => {
     sortBy: 'date',
     startDate: moment(0),
     endDate: undefined
-  }
+  };
   const result = selectExpenses(expenses, filters);
-  expect(result).toEqual([expenses[2], expenses[0]])
+  expect(result).toEqual([expenses[2], expenses[0]]);
 });
 
 test('Should sort by amount', () => {
-
+  const filters = {
+    text: '',
+    sortBy: 'amount',
+    startDate: undefined,
+    endDate: undefined
+  };
+  const result = selectExpenses(expenses, filters);
+  expect(result).toEqual([expenses[2], expenses[1], expenses[0]]);
 });
 
 test('Should sort by date', () => {
-
+  const filters = {
+    text: '',
+    sortBy: 'date',
+    startDate: undefined,
+    endDate: undefined
+  };
+  const result = selectExpenses(expenses, filters);
+  expect(result).toEqual([expenses[2], expenses[0], expenses[1]]);
 });
 
 test('Should sort by endDate', () => {
-
+  const filters = {
+    text: '',
+    sortBy: 'amount',
+    startDate: undefined,
+    endDate: moment(0).add(2,'days')
+  };
+  const result = selectExpenses(expenses, filters);  
+  expect(result).toEqual([expenses[1], expenses[0]]);
 });
