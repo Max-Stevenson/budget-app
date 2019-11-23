@@ -9,7 +9,7 @@
     "serve": "live-server public/",
     "build": "webpack --mode=development",
     "dev-server": "webpack-dev-server",
-    "test": "jest --watch"
+    "test": "jest --watch --config=jest.config.json"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
@@ -26,6 +26,7 @@
     "css-loader": "^3.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "jest": "^24.9.0",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
