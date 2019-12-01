@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import expenses from '../fixtures/expenses';
 import ExpenseForm from '../../components/ExpenseForm';
+import moment from 'moment';
 
 test('Should render ExpenseForm correctly', () => {
   const wrapper = shallow(<ExpenseForm/>);
@@ -79,4 +80,12 @@ test('Should call onSubmit prop for valid form submission', () => {
     note: expenses[0].note,
     createdAt: expenses[0].createdAt 
   });
+});
+
+test('Should set new date on date change', () => {
+  const now = moment()
+  const wrapper = shallow(<ExpenseForm/>);
+  wrapper.find('withStyles(SingleDatePicker)').prop('onDateChange')(now);
+  
+  expect(wrapper.state('createdAt')).toEqual(now);
 });
