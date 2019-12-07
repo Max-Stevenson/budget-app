@@ -25,3 +25,10 @@ beforeEach(() => {
 test('Should render correctly with default filters', () => {
   expect(wrapper).toMatchSnapshot();
 });
+
+test('Should render correctly with alt filters', () => {
+  wrapper.setProps({
+    filters: altFilters
+  });
+  expect(wrapper).toMatchSnapshot();
+});
