@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
+import { DateRangePicker } from 'react-dates';
 import { filters, altFilters } from '../fixtures/filters';
+import moment from 'moment';
 
 let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
 
@@ -60,7 +62,13 @@ test('Should sort by amount', () => {
   expect(sortByAmount).toHaveBeenCalled();
 });
 
-test('', () => {
+test('Should handle date change', () => {
+  const startDate = moment(0).add(3, 'months');
+  const endDate = moment(0).add(6, 'months');
+
+  wrapper.find(DateRangePicker).prop('onDatesChange')({ startDate, endDate});
+  expect(setStartDate).toHaveBeenLastCalledWith(startDate);
+  expect(setEndDate).toHaveBeenLastCalledWith(endDate);
 
 });
 
