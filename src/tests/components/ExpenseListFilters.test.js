@@ -32,3 +32,27 @@ test('Should render correctly with alt filters', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('Should handle text change', () => {
+  const value = 'rent';
+  wrapper.find('input').simulate('change', {
+    target: { value }
+  });
+  expect(setTextFilter).toHaveBeenLastCalledWith(value);
+});
+
+test('', () => {
+
+});
+
+test('', () => {
+
+});
+
+test('', () => {
+
+});
+
+test('', () => {
+
+});
