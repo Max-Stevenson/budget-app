@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import selectExpenses from '../selectors/expenses';
+import selectExpensesTotal from '../selectors/expenses-total';
 require('numeral/locales/en-gb');
 import numeral from 'numeral';
 numeral.locale('en-gb');
@@ -14,3 +16,14 @@ export const ExpenseSummary = ({ expenseCount, expensesTotal }) => {
     </div>
   );
 };
+
+const mapStateToProps = (state) => {
+  const visibleExpenses = selectExpenses(state.expenses, state.filters);
+
+  return {
+    expenseCount: visibleExpenses.length,
+    expensesTotal: selectExpensesTotal(visibleExpenses)
+  };
+};
+
+export default connect(mapStateToProps)(ExpenseSummary);
