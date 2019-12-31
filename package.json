@@ -9,7 +9,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest --watch --config=jest.config.json",
+    "test": "cross-env NODE_ENV=test jest --watch --config=jest.config.json",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
@@ -53,6 +53,7 @@
     "webpack": "^4.41.2"
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "enzyme": "^3.10.0",
     "enzyme-to-json": "^3.4.3",
     "jest": "^24.9.0",
