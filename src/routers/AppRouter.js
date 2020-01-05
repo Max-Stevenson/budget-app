@@ -6,7 +6,7 @@ import EditExpensePage from '../components/EditExpensePage';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
-import { LoginPage } from '../components/LoginPage';
+import LoginPage from '../components/LoginPage';
 
 const AppRouter = () => (
   <BrowserRouter>
