@@ -5,22 +5,8 @@ exports[`Should correctly render LoginPage correctly 1`] = `
   <h1>
     Login To Your Expense Dashboard
   </h1>
-  <form>
-    <input
-      name="username"
-      placeholder="username"
-      required={true}
-      type="text"
-    />
-    <input
-      name="password"
-      placeholder="password"
-      required={true}
-      type="password"
-    />
-    <button>
-      Login
-    </button>
-  </form>
+  <button>
+    Login
+  </button>
 </div>
 `;
