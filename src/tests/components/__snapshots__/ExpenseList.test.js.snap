@@ -1,33 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render Expense List with expenses 1`] = `
-<div>
-  <h1>
-    Expense List
-  </h1>
-  <ExpenseListItem
-    amount={1}
-    createdAt={0}
-    description="test"
-    id="1"
-    key="1"
-    note="test"
-  />
-  <ExpenseListItem
-    amount={1}
-    createdAt={-345600000}
-    description="test two"
-    id="2"
-    key="2"
-    note="test"
-  />
-  <ExpenseListItem
-    amount={3}
-    createdAt={345600000}
-    description="test three"
-    id="3"
-    key="3"
-    note="test"
-  />
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenes
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <ExpenseListItem
+      amount={1}
+      createdAt={0}
+      description="test"
+      id="1"
+      key="1"
+      note="test"
+    />
+    <ExpenseListItem
+      amount={1}
+      createdAt={-345600000}
+      description="test two"
+      id="2"
+      key="2"
+      note="test"
+    />
+    <ExpenseListItem
+      amount={3}
+      createdAt={345600000}
+      description="test three"
+      id="3"
+      key="3"
+      note="test"
+    />
+  </div>
 </div>
 `;
